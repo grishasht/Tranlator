@@ -1,0 +1,6 @@
+PROGRAM TEST;
+	VAR VAR1 : INTEGER;
+	BEGIN
+		VAR1 := 0a;
+	END.
+	
