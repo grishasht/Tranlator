@@ -1,4 +1,4 @@
-package analizer;
+package LexAnalizer;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

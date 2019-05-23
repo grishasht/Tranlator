@@ -1,4 +1,4 @@
-package analizer;
+package LexAnalizer;
 
 import java.io.*;
 
@@ -21,11 +21,12 @@ public class FileFunctions {
         PrintWriter writer = null;
         try {
             writer = new PrintWriter(filePath, "UTF-8");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+
         for (Object i: buffer)
             writer.print(i);
         writer.close();

@@ -1,66 +1,68 @@
-package analizer;
+package LexAnalizer;
 
 import java.io.*;
 import java.util.List;
 
-public class ParseSig extends Model{
+public class ParseSig extends Model {
 
-    private static class SingletonHolder{
+    private static class SingletonHolder {
         private static final ParseSig INSTANCE = new ParseSig();
     }
 
-    public static ParseSig getInstance(){
+    public static ParseSig getInstance() {
         return SingletonHolder.INSTANCE;
     }
 
-    private void throwError(int intCh, String errType){
+    private void throwError(int intCh, String errType) {
         System.out.println("Lex error: " + errType + ". Line "
                 + countLines + "; Column " + countColumns
-                + ". Symbol: " + (char)intCh +
+                + ". Symbol: " + (char) intCh +
                 ", it's ASCII code: " + intCh);
     }
 
     private String getDigit(int intCh, Reader reader) throws IOException {
         setBuffer(intCh);
-        do{
+        do {
             intCh = reader.read();
-            char symbol = (char)intCh;
+            char symbol = (char) intCh;
             Integer[] symbCat = CharacterTable.symbolCategory;
             countColumns++;
             if (symbCat[intCh] == 2 ||
                     symbCat[intCh] == 6) {
                 throwError(intCh, "incorrect constant");
                 break;
-            }else if (symbCat[intCh] == 1) buffer += symbol;
+            } else if (symbCat[intCh] == 1) buffer += symbol;
             else break;
-        }while(!Character.isWhitespace(intCh));
-        setExtraChar((char)intCh);
+        } while (!Character.isWhitespace(intCh));
+        setExtraChar((char) intCh);
         table.put(buffer, constantCode++);
         return buffer;
     }
 
     private String getLetter(int intCh, Reader reader) throws IOException {
         setBuffer(intCh);
-        do{
+
+        do {
             intCh = reader.read();
             if (intCh == -1) break;
             Integer[] symbCat = CharacterTable.symbolCategory;
-            char symbol = (char)intCh;
+            char symbol = (char) intCh;
             countColumns++;
             if (symbCat[intCh] == 6) {
                 throwError(intCh, "incorrect identifier");
                 break;
-            }else if (symbCat[intCh] == 2 || symbCat[intCh] == 1) buffer += symbol;
+            } else if (symbCat[intCh] == 2 || symbCat[intCh] == 1) buffer += symbol;
             else {
-                extraChar.add((char)intCh);
+                extraChar.add((char) intCh);
                 break;
             }
-        }while(!Character.isWhitespace(intCh));
+        } while (!Character.isWhitespace(intCh));
         return buffer;
     }
 
-    private String getOneSymbolDevider(int intCh, Reader reader) throws IOException {
+    private String getOneSymbolDivider(int intCh, Reader reader) throws IOException {
         buffer = "";
+
         if ((char) intCh == '(') {
             char prevIntCh = (char) intCh;
             intCh = reader.read();
@@ -79,7 +81,7 @@ public class ParseSig extends Model{
                     extraChar.add(currCh);
             }
 
-        }else if ((char) intCh == ')') {
+        } else if ((char) intCh == ')') {
             char prevIntCh = (char) intCh;
             intCh = reader.read();
             char currCh = (char) intCh;
@@ -88,10 +90,10 @@ public class ParseSig extends Model{
                     || CharacterTable.symbolCategory[intCh] == 1
                     || CharacterTable.symbolCategory[intCh] == 0
                     || CharacterTable.symbolCategory[intCh] == 6) {
-                    setBuffer(prevIntCh);
-                     extraChar.add(currCh);
-                }
-        }else setBuffer(intCh);
+                setBuffer(prevIntCh);
+                extraChar.add(currCh);
+            }
+        } else setBuffer(intCh);
         return buffer;
     }
 
@@ -125,24 +127,36 @@ public class ParseSig extends Model{
     private String switcher(Reader reader, Integer[] symbCat, int intCh) throws IOException {
         String out = "";
         if (intCh != -1)
-        if (symbCat[intCh]!= null)
-        switch(symbCat[intCh]){
-            case 6: throwError(intCh, "prohibited symbol"); break;
-            case 1: out = getDigit(intCh, reader); break;
-            case 2: out = getLetter(intCh, reader); break;
-            case 3: out = getOneSymbolDevider(intCh, reader); break;
-            case 4: out = getMultySymbolDevider(intCh, reader); break;
-            case 0: break;
-            default: throw new IllegalArgumentException("No such symbol!");
-        }
+            if (symbCat[intCh] != null)
+                switch (symbCat[intCh]) {
+                    case 6:
+                        throwError(intCh, "prohibited symbol");
+                        break;
+                    case 1:
+                        out = getDigit(intCh, reader);
+                        break;
+                    case 2:
+                        out = getLetter(intCh, reader);
+                        break;
+                    case 3:
+                        out = getOneSymbolDivider(intCh, reader);
+                        break;
+                    case 4:
+                        out = getMultySymbolDevider(intCh, reader);
+                        break;
+                    case 0:
+                        break;
+                    default:
+                        throw new IllegalArgumentException("No such symbol!");
+                }
         return out;
     }
 
-    private void fillLexemList(String lexem){
+    private void fillLexemList(String lexem) {
         if (!lexem.equals("")) {
-            if (table.containsKey(lexem)){
+            if (table.containsKey(lexem)) {
                 lexemsBuffer.add(new Lexem(table.get(lexem), countLines, countColumns - lexem.length()));
-            }else{
+            } else {
                 table.put(lexem, identifierCode++);
                 lexemsBuffer.add(new Lexem(table.get(lexem), countLines, countColumns - lexem.length()));
             }
@@ -167,7 +181,7 @@ public class ParseSig extends Model{
             if (extraChar.isEmpty()) {
                 lexem = switcher(reader, symbCat, intCh);
                 fillLexemList(lexem);
-            }else {
+            } else {
                 while (!extraChar.isEmpty()) {
                     lexem = switcher(reader, symbCat, (int) getExtraChar());
                     fillLexemList(lexem);

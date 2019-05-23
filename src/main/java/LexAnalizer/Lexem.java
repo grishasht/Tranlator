@@ -1,4 +1,4 @@
-package analizer;
+package LexAnalizer;
 
 public class Lexem {
     public Integer lexem;
@@ -9,5 +9,14 @@ public class Lexem {
         this.lexem = lexem;
         this.lexemRow = lexemRow;
         this.lexemColumn = lexemColumn;
+    }
+
+    @Override
+    public String toString() {
+        return "Lexem{" +
+                "lexem = " + lexem +
+                ", lexemRow = " + lexemRow +
+                ", lexemColumn = " + lexemColumn +
+                '}';
     }
 }
