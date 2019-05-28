@@ -1,0 +1,4 @@
+PROGRAM TEST;
+	BEGIN ?
+	END.
+	

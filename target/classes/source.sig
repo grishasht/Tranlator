@@ -1,20 +1,19 @@
 PROGRAM MAIN;
 
-VAR
-    IDENT1:     INTEGER;
-    IDENT2:     INTEGER;
-    SUM1:       INTEGER;
-    SUM2:       INTEGER;
-    SUM3:       INTEGER;
-    SUM4:       INTEGER;
-    SUM5:       INTEGER;
-    MULT1:      INTEGER;
-    MULT2:      INTEGER;
-    MULT3:      INTEGER;
-    DIV1:       INTEGER;
-    DIV2:       INTEGER;
-    DIV3:       INTEGER;
-    RES:        INTEGER;
+VAR    IDENT1:     INTEGER;
+VAR    IDENT2:     INTEGER;
+VAR    SUM1:       INTEGER;
+VAR    SUM2:       INTEGER;
+VAR    SUM3:       INTEGER;
+VAR    SUM4:       INTEGER;
+VAR    SUM5:       INTEGER;
+VAR    MULT1:      INTEGER;
+VAR    MULT2:      INTEGER;
+VAR    MULT3:      INTEGER;
+VAR    DIV1:       INTEGER;
+VAR    DIV2:       INTEGER;
+VAR    DIV3:       INTEGER;
+VAR    RES:        INTEGER;
 
 BEGIN
 
@@ -28,8 +27,8 @@ BEGIN
     SUM3 := -(IDENT2 - IDENT1);
     SUM4 := -(IDENT1 + IDENT2);
     SUM5 := -(IDENT1 - (IDENT1 + (IDENT2-SUM1)));
-
-    (* *)
+    &
+    (* )
     MULT1 := IDENT1 * IDENT2;
     MULT2 := MULT1 * IDENT1 * IDENT2;
     MULT3 := -(MULT1 * MULT2);
