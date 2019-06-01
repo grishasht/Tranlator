@@ -12,7 +12,7 @@ public class Model {
     protected Integer identifierCode = 1000;
     protected String buffer;
     protected Queue<Character> extraChar = new ArrayDeque<>();
-    protected List<Lexem> lexemsBuffer = new LinkedList<>();
+    protected List<Lexeme> lexemsBuffer = new LinkedList<>();
     protected HashMap<String, Integer> table = new HashMap<>();
 
     public void setExtraChar(Character extraChar) {
