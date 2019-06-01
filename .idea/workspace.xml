@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3afd0943-e7fc-4221-8fcd-23310e9b65bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/CharacterTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/CharacterTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/FileFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/FileFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/Lexem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/Lexem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codeTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codeTable.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LexAnalizer/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LexAnalizer/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Translator.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/source.sig" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/source.sig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/Translator.kotlin_module" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -86,8 +75,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="980">
-                  <caret line="158" column="57" lean-forward="true" selection-start-line="158" selection-start-column="57" selection-end-line="158" selection-end-column="57" />
+                <state relative-caret-position="-278">
+                  <caret line="114" column="27" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#259#260#0" expanded="true" />
@@ -131,7 +120,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Lexem.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="357">
@@ -145,7 +134,7 @@
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/resources/codeTable.csv">
               <provider selected="true" editor-type-id="csv-text-editor">
                 <state relative-caret-position="238">
@@ -206,8 +195,8 @@
         <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/FileFunctions.java" />
         <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" />
         <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/CharacterTable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/codeTable.csv" />
+        <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java" />
       </list>
     </option>
   </component>
@@ -400,7 +389,7 @@
       <workItem from="1558699773119" duration="1965000" />
       <workItem from="1559069595298" duration="132000" />
       <workItem from="1559073119744" duration="446000" />
-      <workItem from="1559373459322" duration="2358000" />
+      <workItem from="1559373459322" duration="3049000" />
     </task>
     <servers />
   </component>
@@ -437,13 +426,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142913000" />
+    <option name="totallyTimeSpent" value="143604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10192102" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10192102" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -452,8 +441,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.2703583" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2926566" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.237581" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2926566" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.237581" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -698,13 +687,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/symbolCategory.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Lexem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -774,18 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="158" column="57" lean-forward="true" selection-start-line="158" selection-start-column="57" selection-end-line="158" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/tests/p1.sig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -801,6 +771,25 @@
       </provider>
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Lexem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-278">
+          <caret line="114" column="27" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

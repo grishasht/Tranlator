@@ -17,13 +17,13 @@ public class MainTest {
         ParseSig parse = ParseSig.getInstance();
         parse.getSigFile(fileInputStream);
         parse.getTable();
-        List<Lexem> result = parse.lexemsBuffer;
-        List<Lexem> expected = parse.getSigFile(fileInputStream);
+        List<Lexeme> result = parse.lexemsBuffer;
+        List<Lexeme> expected = parse.getSigFile(fileInputStream);
         System.out.println(result.size());
-        for (Lexem i: parse.lexemsBuffer) {
-            System.out.println("Lexem code: " + i.lexemCode +
-                    " Row number: " + i.lexemRow +
-                    " Column number: " + i.lexemColumn);
+        for (Lexeme i: parse.lexemsBuffer) {
+            System.out.println("Lexeme code: " + i.lexemeCode +
+                    " Row number: " + i.lexemeRow +
+                    " Column number: " + i.lexemeColumn);
         }
         assertEquals(expected, result);
     }

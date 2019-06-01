@@ -112,7 +112,7 @@ public class ParseSig extends Model {
         }
     }
 
-    private String getMultySymbolDevider(int intCh, Reader reader) throws IOException {
+    private String getMultiSymbolDivider(int intCh, Reader reader) throws IOException {
         setBuffer(intCh);
 
         intCh = reader.read();
@@ -143,7 +143,7 @@ public class ParseSig extends Model {
                         out = getOneSymbolDivider(intCh, reader);
                         break;
                     case 4:
-                        out = getMultySymbolDevider(intCh, reader);
+                        out = getMultiSymbolDivider(intCh, reader);
                         break;
                     case 0:
                         break;
@@ -153,18 +153,18 @@ public class ParseSig extends Model {
         return out;
     }
 
-    private void fillLexemList(String lexem) {
-        if (!lexem.equals("")) {
-            if (table.containsKey(lexem)) {
-                lexemsBuffer.add(new Lexem(lexem, table.get(lexem), countLines, countColumns - lexem.length()));
+    private void fillLexemeList(String lexeme) {
+        if (!lexeme.equals("")) {
+            if (table.containsKey(lexeme)) {
+                lexemsBuffer.add(new Lexeme(lexeme, table.get(lexeme), countLines, countColumns - lexeme.length()));
             } else {
-                table.put(lexem, identifierCode++);
-                lexemsBuffer.add(new Lexem(lexem, table.get(lexem), countLines, countColumns - lexem.length()));
+                table.put(lexeme, identifierCode++);
+                lexemsBuffer.add(new Lexeme(lexeme, table.get(lexeme), countLines, countColumns - lexeme.length()));
             }
         }
     }
 
-    public List<Lexem> getSigFile(InputStream in) throws IOException {
+    public List<Lexeme> getSigFile(InputStream in) throws IOException {
         String s = "source.sig", t = "testFile";
         //InputStream in = new FileInputStream("src/main/resources/" + s);
         Reader reader = new InputStreamReader(in, "US-ASCII");
@@ -181,11 +181,11 @@ public class ParseSig extends Model {
             char ch = (char) intCh;
             if (extraChar.isEmpty()) {
                 lexem = switcher(reader, symbCat, intCh);
-                fillLexemList(lexem);
+                fillLexemeList(lexem);
             } else {
                 while (!extraChar.isEmpty()) {
                     lexem = switcher(reader, symbCat, (int) getExtraChar());
-                    fillLexemList(lexem);
+                    fillLexemeList(lexem);
                 }
             }
 
