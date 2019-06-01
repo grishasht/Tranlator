@@ -126,6 +126,7 @@ public class ParseSig extends Model {
 
     private String switcher(Reader reader, Integer[] symbCat, int intCh) throws IOException {
         String out = "";
+        Character character = (char) intCh;
         if (intCh != -1)
             if (symbCat[intCh] != null)
                 switch (symbCat[intCh]) {
@@ -155,10 +156,10 @@ public class ParseSig extends Model {
     private void fillLexemList(String lexem) {
         if (!lexem.equals("")) {
             if (table.containsKey(lexem)) {
-                lexemsBuffer.add(new Lexem(table.get(lexem), countLines, countColumns - lexem.length()));
+                lexemsBuffer.add(new Lexem(lexem, table.get(lexem), countLines, countColumns - lexem.length()));
             } else {
                 table.put(lexem, identifierCode++);
-                lexemsBuffer.add(new Lexem(table.get(lexem), countLines, countColumns - lexem.length()));
+                lexemsBuffer.add(new Lexem(lexem, table.get(lexem), countLines, countColumns - lexem.length()));
             }
         }
     }

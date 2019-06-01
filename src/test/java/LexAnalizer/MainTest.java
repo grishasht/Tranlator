@@ -21,7 +21,7 @@ public class MainTest {
         List<Lexem> expected = parse.getSigFile(fileInputStream);
         System.out.println(result.size());
         for (Lexem i: parse.lexemsBuffer) {
-            System.out.println("Lexem code: " + i.lexem +
+            System.out.println("Lexem code: " + i.lexemCode +
                     " Row number: " + i.lexemRow +
                     " Column number: " + i.lexemColumn);
         }

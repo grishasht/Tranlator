@@ -1,42 +1,42 @@
 package SyntaxAnalizer;
 
 public class Grammar {
-    public Node program(){
+    public Node program() {
         return null;
     }
 
-    private Node block(){
+    private Node block() {
         return null;
     }
 
-    private Node variableDeclaration(){
+    private Node variableDeclaration() {
         return null;
     }
 
-    private Node declarationList(){
+    private Node declarationList() {
         return null;
     }
 
-    private Node declaration(){
+    private Node declaration() {
         return null;
     }
 
-    private Node statementList(){
+    private Node statementList() {
         return null;
     }
 
-    private Node statement(){
+    private Node statement() {
         return null;
     }
 
-    private Node expression(){
+    private Node expression() {
         return null;
     }
 
-    private Node summandsList(){
+    private Node summandsList() {
         return null;
     }
 
-   // private Node
+    // private Node
 
 }

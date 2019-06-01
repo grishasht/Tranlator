@@ -17,7 +17,7 @@ public class FileFunctions {
         return buffer;
     }
 
-    public static void writeInFile(String filePath, Object[] buffer){
+    public static void writeInFile(String filePath, Object[] buffer) {
         PrintWriter writer = null;
         try {
             writer = new PrintWriter(filePath, "UTF-8");
@@ -27,7 +27,7 @@ public class FileFunctions {
             e.printStackTrace();
         }
 
-        for (Object i: buffer)
+        for (Object i : buffer)
             writer.print(i);
         writer.close();
     }

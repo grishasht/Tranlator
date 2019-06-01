@@ -8,13 +8,10 @@ public class Main {
 //        CharacterTable.createFileSymbolCategory();
         CharacterTable.getSymbolCategory();
         ParseSig parseSig = ParseSig.getInstance();
-        parseSig.getSigFile(new FileInputStream("src/main/resources/source.sig"));
+//        parseSig.getSigFile(new FileInputStream("src/main/resources/source.sig"));
+        parseSig.getSigFile(new FileInputStream("src/main/resources/tests/p1.sig"));
         parseSig.getTable();
 
-        for (Lexem i: parseSig.lexemsBuffer) {
-            System.out.println("Lexem code: " + i.lexem +
-                    " Row number: " + i.lexemRow +
-                    " Column number: " + i.lexemColumn);
-        }
+        parseSig.lexemsBuffer.forEach(System.out::println);
     }
 }
