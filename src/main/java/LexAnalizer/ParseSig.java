@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.List;
 
 public class ParseSig extends Model {
+    private Integer columnNumber;
 
     private static class SingletonHolder {
         private static final ParseSig INSTANCE = new ParseSig();
@@ -126,7 +127,6 @@ public class ParseSig extends Model {
 
     private String switcher(Reader reader, Integer[] symbCat, int intCh) throws IOException {
         String out = "";
-        Character character = (char) intCh;
         if (intCh != -1)
             if (symbCat[intCh] != null)
                 switch (symbCat[intCh]) {
@@ -156,10 +156,10 @@ public class ParseSig extends Model {
     private void fillLexemeList(String lexeme) {
         if (!lexeme.equals("")) {
             if (table.containsKey(lexeme)) {
-                lexemsBuffer.add(new Lexeme(lexeme, table.get(lexeme), countLines, countColumns - lexeme.length()));
+                lexemsBuffer.add(new Lexeme(lexeme, table.get(lexeme), countLines, columnNumber));
             } else {
-                table.put(lexeme, identifierCode++);
-                lexemsBuffer.add(new Lexeme(lexeme, table.get(lexeme), countLines, countColumns - lexeme.length()));
+                table.put(lexeme, ++identifierCode);
+                lexemsBuffer.add(new Lexeme(lexeme, table.get(lexeme), countLines, columnNumber));
             }
         }
     }
@@ -180,10 +180,12 @@ public class ParseSig extends Model {
         while (true) {
             char ch = (char) intCh;
             if (extraChar.isEmpty()) {
+                columnNumber = countColumns;
                 lexem = switcher(reader, symbCat, intCh);
                 fillLexemeList(lexem);
             } else {
                 while (!extraChar.isEmpty()) {
+                    columnNumber = countColumns;
                     lexem = switcher(reader, symbCat, (int) getExtraChar());
                     fillLexemeList(lexem);
                 }
