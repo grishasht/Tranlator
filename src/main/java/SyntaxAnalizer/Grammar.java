@@ -1,13 +1,18 @@
 package SyntaxAnalizer;
 
 import LexAnalizer.CharacterTable;
+import LexAnalizer.Lexeme;
 import LexAnalizer.ParseSig;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.function.Function;
 
 public class Grammar {
     private LexemeList lexemeList;
+
 
     {
         CharacterTable.getSymbolCategory();
@@ -34,20 +39,39 @@ public class Grammar {
         return null;
     }
 
-    private Node declarationList() {
-        return null;
+    public Node declarationList() {
+        List<Node> nodesBuffer = new LinkedList<>();
+        Node declaration = null;
+        while (true) {
+            if ((declaration = declaration()) == null) break;
+            nodesBuffer.add(declaration);
+        }
+
+        Node node = Node.newBuilder()
+                .setRule("<declaration-list>")
+                .build();
+
+        for (int i = 0; i < nodesBuffer.size(); i++) {
+            node.addChildren(nodesBuffer.get(i));
+        }
+
+        return node;
+
     }
 
     public Node declaration() {
         Node node = variableIdentifier();
 
-        if (!":".equals(lexemeList.pop().lexeme)){
+        Lexeme lexeme = lexemeList.pop();
+
+        if (lexeme != null)
+        if (!":".equals(lexeme.lexeme)) {
             Service.throwError("':' expected");
-        }else if(!"INTEGER".equals(lexemeList.pop().lexeme.toUpperCase())){
+        } else if (!"INTEGER".equals(lexemeList.pop().lexeme.toUpperCase())) {
             Service.throwError("'INTEGER' expected");
-        }else if(!";".equals(lexemeList.pop().lexeme.toUpperCase())){
+        } else if (!";".equals(lexemeList.pop().lexeme.toUpperCase())) {
             Service.throwError("';' expected");
-        }else{
+        } else {
             return Node.newBuilder()
                     .setRule("<declaration>")
                     .addChildren(node)
@@ -94,10 +118,13 @@ public class Grammar {
     }
 
     private Node variableIdentifier() {
-        return Node.newBuilder()
-                .setRule("<variable-identifier>")
-                .addChildren(identifier())
-                .build();
+        Node identifier = identifier();
+        if (identifier != null)
+            return Node.newBuilder()
+                    .setRule("<variable-identifier>")
+                    .addChildren(identifier)
+                    .build();
+        else return null;
     }
 
     private Node procedureIdentifier() {
@@ -106,13 +133,17 @@ public class Grammar {
 
     private Node identifier() {
 //        lexemeList.getLexemes().forEach(System.out::println);
-        String lexeme = lexemeList.pop().lexeme;
+        Lexeme lexeme = lexemeList.pop();
+        String lexemeName;
+        if (lexeme != null) lexemeName = lexeme.lexeme;
+        else lexemeName = "";
 
-        if (Service.getLexemeCode(lexeme)
-                >= 1000 && lexeme != null){
+        if (lexeme != null
+                && Service.getLexemeCode(lexemeName)
+                >= 1000) {
             return Node.newBuilder()
                     .setRule("<identifier>")
-                    .setData(lexeme)
+                    .setData(lexemeName)
                     .build();
         } else {
             Service.throwError("identifier expected");

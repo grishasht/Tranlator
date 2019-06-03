@@ -1,14 +1,14 @@
 package SyntaxAnalizer;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Node {
     private String rule;
     private String data;
-    private Queue<Node> children = new PriorityQueue<>();
+    private List<Node> children = new LinkedList<>();
 
-    private Node() {
+    public Node() {
     }
 
     public static Builder newBuilder() {
@@ -35,34 +35,31 @@ public class Node {
             return this;
         }
 
-        public String getRule() {
-            return Node.this.rule;
-        }
-
-        public String getData() {
-            return Node.this.data;
-        }
-
         public Node build() {
             return Node.this;
         }
     }
 
-    public void print(Node node, int tab) {
-        int n = 0;
-        if (node.data == null) {
-            System.out.print("rule= " + rule);
-        } else {
-            System.out.println("data= " + data);
-        }
-        if (children != null) {
-            for (int i = 0; i < tab; i++)
-                System.out.print("\t");
-
-            System.out.println(toString());
-            print(children.poll(), ++n);
-        }
+    public void addChildren(Node node) {
+        if (node != null)
+            children.add(node);
     }
+
+//    public void print(Node node, int tab) {
+//        int n = 0;
+//        if (node.data == null) {
+//            System.out.print("rule= " + rule);
+//        } else {
+//            System.out.println("data= " + data);
+//        }
+//        if (children != null) {
+//            for (int i = 0; i < tab; i++)
+//                System.out.print("\t");
+//
+//            System.out.println(toString());
+//            print(children.poll(), ++n);
+//        }
+//    }
 
 
     @Override

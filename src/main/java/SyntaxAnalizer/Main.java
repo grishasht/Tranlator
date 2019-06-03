@@ -16,6 +16,6 @@ public class Main {
 //        LexemeTable.setLexemesMap(parseSig.getTable());
 //        LexemeTable.print();
         Grammar grammar = new Grammar();
-        System.out.println(grammar.declaration().toString());
+        System.out.println(grammar.declarationList().toString());
     }
 }
