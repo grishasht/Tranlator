@@ -16,6 +16,10 @@ public class LexemeList {
         return (Lexeme) ((LinkedList) lexemes).pollFirst();
     }
 
+    public void addFirst(Lexeme lexeme){
+        lexemes.add(0, lexeme);
+    }
+
     public List<Lexeme> getLexemes() {
         return lexemes;
     }
