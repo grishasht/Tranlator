@@ -8,8 +8,8 @@ import java.util.*;
 public class Model {
     protected Integer countLines;
     protected Integer countColumns;
-    protected Integer constantCode = 499;
-    protected Integer identifierCode = 999;
+    protected Integer constantCode = 500;
+    protected Integer identifierCode = 1000;
     protected String buffer;
     protected Queue<Character> extraChar = new ArrayDeque<>();
     protected List<Lexeme> lexemsBuffer = new LinkedList<>();
