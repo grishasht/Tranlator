@@ -17,5 +17,6 @@ public class Main {
 //        LexemeTable.print();
         Grammar grammar = new Grammar();
         System.out.println(grammar.program().toString());
+        //Service.printTree(grammar.program(), 0);
     }
 }

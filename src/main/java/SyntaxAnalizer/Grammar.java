@@ -3,7 +3,6 @@ package SyntaxAnalizer;
 import LexAnalizer.CharacterTable;
 import LexAnalizer.Lexeme;
 import LexAnalizer.ParseSig;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -34,15 +33,15 @@ public class Grammar {
         Lexeme lexeme2 = lexemeList.pop();
 
         if (lexeme == null || !"PROGRAM".equals(lexeme.lexeme.toUpperCase())) {
-            Service.throwError("'PROGRAM' expected");
+            Service.throwError("'PROGRAM' expected." + Service.lineColumnError(lexemeList));
         } else if (procedureIdentifier == null) {
-            Service.throwError("Procedure identifier expected");
+            Service.throwError("Procedure identifier expected." + Service.lineColumnError(lexemeList));
         } else if (lexeme1 == null || !";".equals(lexeme1.lexeme)) {
-            Service.throwError("';' expected");
+            Service.throwError("';' expected." + Service.lineColumnError(lexemeList));
         } else if (block == null) {
-            Service.throwError("Block expected");
+            Service.throwError("Block expected." + Service.lineColumnError(lexemeList));
         } else if (lexeme2 == null || !".".equals(lexeme2.lexeme)) {
-            Service.throwError("'.' expected");
+            Service.throwError("'.' expected." + Service.lineColumnError(lexemeList));
         } else {
             return Node.newBuilder()
                     .setRule("<program>")
@@ -61,19 +60,19 @@ public class Grammar {
         Lexeme lexeme1 = lexemeList.pop();
 
         if (variableDeclaration == null) {
-            Service.throwError("Variable declaration expected");
+            Service.throwError("Variable declaration expected." + Service.lineColumnError(lexemeList));
         } else if (lexeme == null) {
-            Service.throwError("'BEGIN' expected");
+            Service.throwError("'BEGIN' expected." + Service.lineColumnError(lexemeList));
         } else if (!"BEGIN".equals(lexeme.lexeme.toUpperCase())) {
             lexemeList.addFirst(lexeme);
-            Service.throwError("'BEGIN' expected");
+            Service.throwError("'BEGIN' expected." + Service.lineColumnError(lexemeList));
         } else if (statementList == null) {
-            Service.throwError("Statement list expected");
+            Service.throwError("Statement list expected." + Service.lineColumnError(lexemeList));
         } else if (lexeme1 == null) {
             lexemeList.addFirst(lexeme1);
-            Service.throwError("'END' expected");
+            Service.throwError("'END' expected." + Service.lineColumnError(lexemeList));
         } else if (!"END".equals(lexeme1.lexeme.toUpperCase())) {
-            Service.throwError("'END' expected");
+            Service.throwError("'END' expected." + Service.lineColumnError(lexemeList));
         } else {
             return Node.newBuilder()
                     .setRule("<block>")
@@ -90,7 +89,7 @@ public class Grammar {
 
         if (lexeme != null)
             if (!"VAR".equals(lexeme.lexeme.toUpperCase())) {
-                Service.throwError("'VAR' expected");
+                Service.throwError("'VAR' expected." + Service.lineColumnError(lexemeList));
             } else {
                 return Node.newBuilder()
                         .setRule("<variable-declaration>")
@@ -135,11 +134,11 @@ public class Grammar {
 
         if (lexeme != null)
             if (!":".equals(lexeme.lexeme)) {
-                Service.throwError("':' expected");
+                Service.throwError("':' expected." + Service.lineColumnError(lexemeList));
             } else if (!"INTEGER".equals(lexemeList.pop().lexeme.toUpperCase())) {
-                Service.throwError("'INTEGER' expected");
+                Service.throwError("'INTEGER' expected." + Service.lineColumnError(lexemeList));
             } else if (!";".equals(lexemeList.pop().lexeme)) {
-                Service.throwError("';' expected");
+                Service.throwError("';' expected." + Service.lineColumnError(lexemeList));
             } else {
                 return Node.newBuilder()
                         .setRule("<declaration>")
@@ -188,14 +187,14 @@ public class Grammar {
 
         if (lexeme != null) {
             if (variableIdentifier == null) {
-                Service.throwError("Variable identifier expected");
+                Service.throwError("Variable identifier expected." + Service.lineColumnError(lexemeList));
             } else if (!":=".equals(lexeme.lexeme)) {
-                Service.throwError("':=' expected");
+                Service.throwError("':=' expected." + Service.lineColumnError(lexemeList));
             } else if (expression == null) {
-                Service.throwError("Expression expected");
+                Service.throwError("Expression expected." + Service.lineColumnError(lexemeList));
             } else if (nextLexeme != null)
                 if (!";".equals(nextLexeme.lexeme)) {
-                    Service.throwError("';' expected");
+                    Service.throwError("';' expected." + Service.lineColumnError(lexemeList));
                 } else {
                     return Node.newBuilder()
                             .setRule("<statement>")
@@ -211,19 +210,19 @@ public class Grammar {
 
     private Node expression() {
         Node summand = summand();
-         Node summandsList = summandsList();
+        Node summandsList = summandsList();
 
         Node node = Node.newBuilder()
                 .setRule("<expression>")
                 .build();
 
         if (summand == null) {
-            Service.throwError("Summand expected");
+            Service.throwError("Summand expected." + Service.lineColumnError(lexemeList));
             return null;
         } else if (summandsList == null) {
-            Service.throwError("Summands list expected");
+            Service.throwError("Summands list expected." + Service.lineColumnError(lexemeList));
             return null;
-        }  else {
+        } else {
             node.addChildren(summand);
             node.addChildren(summandsList);
         }
@@ -240,7 +239,7 @@ public class Grammar {
             //Service.throwError("Add instruction expected");
             return null;
         } else if (summand == null) {
-            Service.throwError("Summand expected");
+            Service.throwError("Summand expected." + Service.lineColumnError(lexemeList));
             return null;
         } else {
             return Node.newBuilder()
@@ -282,10 +281,10 @@ public class Grammar {
 
 
         if (multiplier == null) {
-           // Service.throwError("multiplier expected");
+            // Service.throwError("multiplier expected");
             return null;
         } else if (multiplierList == null) {
-            Service.throwError("multipliers list expected");
+            Service.throwError("Multipliers list expected." + Service.lineColumnError(lexemeList));
             return null;
         } else {
             return Node.newBuilder()
@@ -312,7 +311,7 @@ public class Grammar {
         }
 
         if (multiplier == null) {
-            Service.throwError("Multiplier expected");
+            Service.throwError("Multiplier expected." + Service.lineColumnError(lexemeList));
             return null;
         } else {
             node.addChildren(multiplier);
@@ -350,13 +349,13 @@ public class Grammar {
         if (variableIdentifier == null && unsignedInteger == null) {
             lexeme = lexemeList.pop();
             if (lexemeList == null) {
-                Service.throwError("Multiplier expected");
+                Service.throwError("Multiplier expected." + Service.lineColumnError(lexemeList));
                 return null;
             } else if ("(".equals(lexeme.lexeme)) {
                 expression = expression();
                 Lexeme lexeme1 = lexemeList.pop();
                 if (expression == null || lexeme == null) {
-                    Service.throwError("Multiplier expected");
+                    Service.throwError("Multiplier expected." + Service.lineColumnError(lexemeList));
                     return null;
                 } else if (")".equals(lexeme1.lexeme)) {
                     return Node.newBuilder()
@@ -406,7 +405,7 @@ public class Grammar {
         Node identifier = identifier();
 
         if (identifier == null) {
-            Service.throwError("Identifier expected");
+            Service.throwError("Identifier expected." + Service.lineColumnError(lexemeList));
         } else return Node.newBuilder()
                 .setRule("<procedure-identifier>")
                 .addChildren(identifier)

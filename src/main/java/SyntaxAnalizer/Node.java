@@ -6,6 +6,7 @@ import java.util.List;
 public class Node {
     private String rule;
     private String data;
+    private int i = 0;
     private List<Node> children = new LinkedList<>();
 
     public Node() {
@@ -45,36 +46,34 @@ public class Node {
             children.add(node);
     }
 
-//    public void print(Node node, int tab) {
-//        int n = 0;
-//        if (node.data == null) {
-//            System.out.print("rule= " + rule);
-//        } else {
-//            System.out.println("data= " + data);
-//        }
-//        if (children != null) {
-//            for (int i = 0; i < tab; i++)
-//                System.out.print("\t");
-//
-//            System.out.println(toString());
-//            print(children.poll(), ++n);
-//        }
-//    }
+    public String getData() {
+        return data;
+    }
 
+    public String getRule() {
+        return rule;
+    }
+
+    public List<Node> getChildren() {
+        return children;
+    }
 
     @Override
     public String toString() {
         if (data != null)
-            return "\n" +
-                    "rule: " + rule +
-                    "  data: " + data +
-                    "  children: " + children.toString()
+            return "\n" + Service.setTabs(++i)
+                    + rule
+                    + "  data: " + data
+                    + children.toString()
                     .replace("[", "")
-                    .replace("]", "");
-        else return "\n" +
-                    "rule: " + rule +
-                    "  children: " + children.toString()
+                    .replace("]", "")
+                    .replace(",", "");
+        else return "\n" + Service.setTabs(++i)
+                    + rule
+                    + children.toString()
                     .replace("[", "")
-                    .replace("]", "");
+                    .replace("]", "")
+                    .replace(",", "");
+
     }
 }

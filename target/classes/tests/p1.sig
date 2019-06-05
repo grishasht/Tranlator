@@ -1,4 +1,5 @@
 PROGRAM prog;
+
     VAR
         VAR1 : INTEGER;
         VAR2 : INTEGER;
@@ -9,8 +10,10 @@ PROGRAM prog;
 
 BEGIN
 
-    VAR1 := 25 * (VAR2 * 20 + VAR1 / (VAR5 / 5 - VAR5 * 5))) + 15 * 10;
+    VAR1 := 25 * (VAR2 * 20 + VAR1 * (VAR5 / 5 - VAR5 * 5)) + 15 * 10;
+
     VAR2 := 10 / VAR3 + 5 * VAR2;
-    VAR3 := 15 / VAR4 - 30 / VAR4;
+
+    VAR3 := 15 / VAR4 - 30 / (VAR5 * 34 - 23 / VAR6);
 
 END.

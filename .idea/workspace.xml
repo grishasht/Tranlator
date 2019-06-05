@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c318001-3cb1-4503-99a0-b00da594776e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/LexemeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/LexemeList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/tests/p1.sig" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tests/p1.sig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LexAnalizer/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LexAnalizer/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tests/p1.sig" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tests/p1.sig" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,8 +41,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" selection-start-line="19" selection-end-line="19" />
+                <state relative-caret-position="306">
+                  <caret line="18" column="55" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="55" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -51,22 +51,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Lexeme.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="208">
-                  <caret line="239" column="14" selection-start-line="239" selection-start-column="14" selection-end-line="239" selection-end-column="14" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="3376">
+                  <caret line="289" column="36" lean-forward="true" selection-start-line="289" selection-start-column="36" selection-end-line="289" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -88,22 +76,24 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/LexemeList.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="23" selection-start-column="23" selection-end-column="23" />
+                <state relative-caret-position="289">
+                  <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#275#276#0" expanded="true" />
                     <element signature="e#341#342#0" expanded="true" />
+                    <element signature="e#372#373#0" expanded="true" />
+                    <element signature="e#426#427#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Service.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="153">
-                  <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+                  <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -112,11 +102,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/resources/tests/p1.sig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+                <state relative-caret-position="272">
+                  <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
                 </state>
               </provider>
             </entry>
@@ -124,20 +114,27 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/resources/source.sig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="23" selection-start-line="23" selection-end-line="23" />
+                <state relative-caret-position="680">
+                  <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-109">
-                  <caret line="14" selection-start-line="14" selection-end-line="14" />
+                <state relative-caret-position="277">
+                  <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#269#270#0" expanded="true" />
                     <element signature="e#316#317#0" expanded="true" />
+                    <element signature="e#990#991#0" expanded="true" />
+                    <element signature="e#1017#1018#0" expanded="true" />
+                    <element signature="e#1048#1049#0" expanded="true" />
+                    <element signature="e#1075#1076#0" expanded="true" />
+                    <element signature="e#998#999#0" expanded="true" />
+                    <element signature="e#1029#1030#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -175,6 +172,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Add instruction expected</find>
+      <find>Multipliers list expected</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -187,14 +190,14 @@
         <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java" />
         <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Lexeme.java" />
         <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/Lexeme.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/tests/test2.sig" />
+        <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/Model.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/LexemeList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/tests/p1.sig" />
+        <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/tests/test2.sig" />
-        <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/LexemeList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/Model.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/tests/p1.sig" />
-        <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" />
       </list>
     </option>
   </component>
@@ -362,12 +365,12 @@
       <workItem from="1559502362687" duration="15576000" />
       <workItem from="1559550572739" duration="20566000" />
       <workItem from="1559673903292" duration="12954000" />
-      <workItem from="1559727515590" duration="9426000" />
+      <workItem from="1559727515590" duration="14467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67896000" />
+    <option name="totallyTimeSpent" value="72937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
@@ -382,8 +385,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.2699784" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21598272" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.237581" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24082074" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5399568" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -413,27 +416,51 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java</url>
-          <line>29</line>
+          <line>28</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java</url>
-          <line>59</line>
+          <line>58</line>
           <properties />
           <option name="timeStamp" value="43" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java</url>
-          <line>181</line>
+          <line>180</line>
           <properties />
           <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java</url>
+          <line>61</line>
+          <properties class="SyntaxAnalizer.Node" method="toString">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>grammar.program().toString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>.toString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>Lexeme lexeme = lexemeList.pop();</expression-string>
         <language-id>JAVA</language-id>
@@ -638,51 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Lexeme.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getLetter#0;class#ParseSig#0" />
-            <element signature="method#getOneSymbolDivider#0;class#ParseSig#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/LexemeList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/source.sig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/codeTable.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
@@ -700,41 +682,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-109">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Lexeme.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/LexemeList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="239" column="14" selection-start-line="239" selection-start-column="14" selection-end-line="239" selection-end-column="14" />
+        <state relative-caret-position="476">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getLetter#0;class#ParseSig#0" />
+            <element signature="method#getOneSymbolDivider#0;class#ParseSig#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/source.sig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/tests/p1.sig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state relative-caret-position="272">
+          <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3376">
+          <caret line="289" column="36" lean-forward="true" selection-start-line="289" selection-start-column="36" selection-end-line="289" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1048#1049#0" expanded="true" />
+            <element signature="e#1075#1076#0" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1029#1030#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
