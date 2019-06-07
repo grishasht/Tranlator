@@ -21,9 +21,7 @@ public class FileFunctions {
         PrintWriter writer = null;
         try {
             writer = new PrintWriter(filePath, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
+        } catch (UnsupportedEncodingException | FileNotFoundException e) {
             e.printStackTrace();
         }
 

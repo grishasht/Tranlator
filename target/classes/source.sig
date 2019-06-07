@@ -1,44 +1,26 @@
 PROGRAM MAIN;
 
 VAR
-    IDENT1:     INTEGER;
-    IDENT2:     INTEGER;
-    SUM1:       INTEGER;
-    SUM2:       INTEGER;
-    SUM3:       INTEGER;
-    SUM4:       INTEGER;
-    SUM5:       INTEGER;
-    MULT1:      INTEGER;
-    MULT2:      INTEGER;
-    MULT3:      INTEGER;
-    DIV1:       INTEGER;
-    DIV2:       INTEGER;
-    DIV3:       INTEGER;
-    RES:        INTEGER;
+    VAR1:       INTEGER;
+    VAR2:       INTEGER;
+    VAR3:       INTEGER;
+    VAR4:       INTEGER;
+    VAR5:       INTEGER;
+    VAR6:       INTEGER;
+    RES1:       INTEGER;
+    RES2:       INTEGER;
+    RES3:       INTEGER;
 
 BEGIN
 
+    RES1 := 10 / VAR1 * 5 / VAR2 + 5 / VAR1;
+
     (*Identifier appropriation*)
-    IDENT1 := 5;
-    IDENT2 := 15;
+    RES1 := 10 / VAR3 + 5 * VAR2;
 
     (*****This must be correct*)
-    SUM1 := IDENT1 + IDENT2;
-    SUM2 := IDENT1 - IDENT2;
-    SUM3 := -(IDENT2 - IDENT1);
-    SUM4 := -(IDENT1 + IDENT2);
-    SUM5 := -(IDENT1 - (IDENT1 + (IDENT2-SUM1)));
+    RES2 := 15 / VAR4 - 30 / (VAR5 * 34 - 23 / VAR6);
 
-    (* *)
-    MULT1 := IDENT1 * IDENT2;
-    MULT2 := MULT1 * IDENT1 * IDENT2;
-    MULT3 := -(MULT1 * MULT2);
-
-
-    DIV1 := IDENT2 / IDENT1;
-    DIV2 := -(IDENT2 / IDENT1);
-    DIV3 := DIV2 / DIV1;
-
-    RES := -(((IDENT1 + IDENT2) * (IDENT2 - IDENT1)) / 5);
+    RES3 := 25 * (VAR2 * 20 + VAR1 * (VAR5 / 5 - VAR5 * 5)) + 15 * 10;
 
 END.

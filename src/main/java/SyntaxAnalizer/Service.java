@@ -2,6 +2,8 @@ package SyntaxAnalizer;
 
 import LexAnalizer.Lexeme;
 
+import java.util.List;
+
 public class Service {
 
     public static void throwError(String errType) {
@@ -14,19 +16,21 @@ public class Service {
         // + ". Column = " + lexemeList.getFirst().lexemeColumn;
     }
 
-    public static void printTree(Node node, int i) {
+    public static void printTree(Node node, String tabs) {
+        if (node.getData() != null)
+            System.out.println(tabs + node.getRule() + " " + node.getData());
+        else System.out.println(tabs + node.getRule());
+        tabs += "   ";
         for (Node node1 : node.getChildren()) {
-            System.out.println(node.getChildren() + setTabs(i));
-            if (node1 != null)
-                printTree(node1, ++i);
+            if (node1.getData() != null) {
+                System.out.println(printData(node1, tabs));
+            } else {
+                printTree(node1, tabs);
+            }
         }
     }
 
-    public static String setTabs(int n) {
-        String tabs = "";
-        for(int i = 0; i < n; i++){
-            tabs += "  ";
-        }
-        return tabs;
+    public static String printData(Node node, String tabs) {
+        return tabs +  node.getData() + " " + node.getRule() + " " ;
     }
 }

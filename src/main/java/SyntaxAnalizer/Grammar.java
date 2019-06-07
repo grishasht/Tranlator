@@ -3,22 +3,24 @@ package SyntaxAnalizer;
 import LexAnalizer.CharacterTable;
 import LexAnalizer.Lexeme;
 import LexAnalizer.ParseSig;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class Grammar {
-    private String constBuffer = null;
     private LexemeList lexemeList;
-    private List<Lexeme> buffer = new LinkedList<>();
+    private Map<String, Integer> lexemeTable;
 
     {
         CharacterTable.getSymbolCategory();
         ParseSig parseSig = ParseSig.getInstance();
         LexemeTable.setLexemesMap(parseSig.getTable());
+        lexemeTable = LexemeTable.getLexemesMap();
         try {
-            lexemeList = new LexemeList(parseSig.getSigFile(new FileInputStream("src/main/resources/tests/p1.sig")));
+            lexemeList = new LexemeList(parseSig.getSigFile(new FileInputStream("src/main/resources/source.sig")));
         } catch (IOException e) {
             System.out.println("Can't open file in Grammar.java");
             e.printStackTrace();
@@ -45,6 +47,7 @@ public class Grammar {
         } else {
             return Node.newBuilder()
                     .setRule("<program>")
+                    .addChildren(terminal("PROGRAM"))
                     .addChildren(procedureIdentifier)
                     .addChildren(block)
                     .build();
@@ -77,7 +80,9 @@ public class Grammar {
             return Node.newBuilder()
                     .setRule("<block>")
                     .addChildren(variableDeclaration)
+                    .addChildren(terminal("BEGIN"))
                     .addChildren(statementList)
+                    .addChildren(terminal("END"))
                     .build();
         }
 
@@ -93,6 +98,7 @@ public class Grammar {
             } else {
                 return Node.newBuilder()
                         .setRule("<variable-declaration>")
+                        .addChildren(terminal("VAR"))
                         .addChildren(declarationList())
                         .build();
             }
@@ -101,25 +107,20 @@ public class Grammar {
     }
 
     public Node declarationList() {
-        List<Node> nodesBuffer = new LinkedList<>();
-        Node declaration = null;
-        while (true) {
-            if ((declaration = declaration()) == null) break;
-            nodesBuffer.add(declaration);
+        Node declaration = declaration();
+
+        if (declaration == null) {
+            return Node.newBuilder()
+                    .setRule("<declaration-list>")
+                    .addChildren(empty())
+                    .build();
+        } else {
+            return Node.newBuilder()
+                    .setRule("<declaration-list>")
+                    .addChildren(declaration)
+                    .addChildren(declarationList())
+                    .build();
         }
-
-        Node node = Node.newBuilder()
-                .setRule("<declaration-list>")
-                .build();
-
-        if (nodesBuffer.size() != 0)
-            for (int i = 0; i < nodesBuffer.size(); i++) {
-                node.addChildren(nodesBuffer.get(i));
-            }
-        else return empty();
-
-        return node;
-
     }
 
     public Node declaration() {
@@ -143,6 +144,9 @@ public class Grammar {
                 return Node.newBuilder()
                         .setRule("<declaration>")
                         .addChildren(node)
+                        .addChildren(terminal(":"))
+                        .addChildren(terminal("INTEGER"))
+                        .addChildren(terminal(";"))
                         .build();
             }
 
@@ -150,24 +154,17 @@ public class Grammar {
     }
 
     private Node statementList() {
-        List<Node> nodesBuffer = new LinkedList<>();
-        Node statement = null;
-        while (true) {
-            if ((statement = statement()) == null) break;
-            nodesBuffer.add(statement);
-        }
-
-        Node node = Node.newBuilder()
+        Node statement = statement();
+        if (statement == null) {
+            return Node.newBuilder()
+                    .setRule("<statement-list>")
+                    .addChildren(empty())
+                    .build();
+        } else return Node.newBuilder()
                 .setRule("<statement-list>")
+                .addChildren(statement)
+                .addChildren(statementList())
                 .build();
-
-        if (nodesBuffer.size() != 0)
-            for (int i = 0; i < nodesBuffer.size(); i++) {
-                node.addChildren(nodesBuffer.get(i));
-            }
-        else return empty();
-
-        return node;
     }
 
     public Node statement() {
@@ -199,7 +196,9 @@ public class Grammar {
                     return Node.newBuilder()
                             .setRule("<statement>")
                             .addChildren(variableIdentifier)
+                            .addChildren(terminal(":="))
                             .addChildren(expression)
+                            .addChildren(terminal(";"))
                             .build();
                 }
         }
@@ -260,13 +259,13 @@ public class Grammar {
             if ("+".equals(lexeme.lexeme)) {
                 return Node.newBuilder()
                         .setRule("<add-instruction>")
-                        .setData(lexeme.lexeme)
+                        .addChildren(terminal("+"))
                         .build();
 
             } else if ("-".equals(lexeme.lexeme)) {
                 return Node.newBuilder()
                         .setRule("<add-instruction>")
-                        .setData(lexeme.lexeme)
+                        .addChildren(terminal("-"))
                         .build();
             } else {
                 lexemeList.addFirst(lexeme);
@@ -305,7 +304,10 @@ public class Grammar {
                 .build();
 
         if (multiplicationInstruction == null) {
-            return null;
+            return Node.newBuilder()
+                    .setRule("<multipliers-list>")
+                    .addChildren(empty())
+                    .build();
         } else {
             node.addChildren(multiplicationInstruction);
         }
@@ -328,7 +330,7 @@ public class Grammar {
             if ("*".equals(lexeme.lexeme) || "/".equals(lexeme.lexeme)) {
                 return Node.newBuilder()
                         .setRule("<multiplication-instruction>")
-                        .setData(lexeme.lexeme)
+                        .addChildren(terminal(lexeme.lexeme))
                         .build();
             } else {
                 lexemeList.addFirst(lexeme);
@@ -360,7 +362,9 @@ public class Grammar {
                 } else if (")".equals(lexeme1.lexeme)) {
                     return Node.newBuilder()
                             .setRule("<multiplier>")
+                            .addChildren(terminal("("))
                             .addChildren(expression)
+                            .addChildren(terminal(")"))
                             .build();
                 } else {
                     lexemeList.addFirst(lexeme1);
@@ -422,7 +426,7 @@ public class Grammar {
                     >= 1000) {
                 return Node.newBuilder()
                         .setRule("<identifier>")
-                        .setData(lexeme.lexeme)
+                        .addChildren(terminal(lexeme.lexeme))
                         .build();
             } else {
                 //Service.throwError("identifier expected");
@@ -442,7 +446,7 @@ public class Grammar {
             if (lexeme.lexemeCode >= 500) {
                 return Node.newBuilder()
                         .setRule("<unsigned-integer>")
-                        .setData(lexeme.lexeme)
+                        .addChildren(terminal(lexeme.lexeme))
                         .build();
             } else {
                 lexemeList.addFirst(lexeme);
@@ -451,6 +455,13 @@ public class Grammar {
         } else {
             return null;
         }
+    }
+
+    private Node terminal(String terminal) {
+        return Node.newBuilder()
+                .setRule(terminal)
+                .setData(String.valueOf(lexemeTable.get(terminal)))
+                .build();
     }
 
     private Node empty() {

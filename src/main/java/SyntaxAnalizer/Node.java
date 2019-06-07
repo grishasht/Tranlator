@@ -61,14 +61,14 @@ public class Node {
     @Override
     public String toString() {
         if (data != null)
-            return "\n" + Service.setTabs(++i)
+            return "\n"
                     + rule
                     + "  data: " + data
                     + children.toString()
                     .replace("[", "")
                     .replace("]", "")
                     .replace(",", "");
-        else return "\n" + Service.setTabs(++i)
+        else return "\n"
                     + rule
                     + children.toString()
                     .replace("[", "")
