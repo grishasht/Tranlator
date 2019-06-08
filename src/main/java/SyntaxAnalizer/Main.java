@@ -22,6 +22,6 @@ public class Main {
         // nodes.add(grammar.program());
         Grammar grammar = new Grammar();
         //System.out.println(grammar.program().toString());
-        Service.printTree(grammar.program(), "");
+        Service.printTree(grammar.signalProgramm(), "");
     }
 }

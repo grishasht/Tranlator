@@ -27,6 +27,13 @@ public class Grammar {
         }
     }
 
+    public Node signalProgramm(){
+        return Node.newBuilder()
+                .setRule("<signal-program>")
+                .addChildren(program())
+                .build();
+    }
+
     public Node program() {
         Lexeme lexeme = lexemeList.pop();
         Node procedureIdentifier = procedureIdentifier();
@@ -49,6 +56,7 @@ public class Grammar {
                     .setRule("<program>")
                     .addChildren(terminal("PROGRAM"))
                     .addChildren(procedureIdentifier)
+                    .addChildren(terminal(";"))
                     .addChildren(block)
                     .build();
         }
