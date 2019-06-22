@@ -1,6 +1,10 @@
 PROGRAM MAIN;
 
 VAR
+    (*
+    TEST: [2..4[1..4 [3..5]]];
+    *)
+    TEST1:      INTEGER;
     VAR1:       INTEGER;
     VAR2:       INTEGER;
     VAR3:       INTEGER;
@@ -12,7 +16,7 @@ VAR
     RES3:       INTEGER;
 
 BEGIN
-
+    (* Must * work*)
     RES1 := 10 / VAR1 * 5 / VAR2 + 5 / VAR1;
 
     (*Identifier appropriation*)

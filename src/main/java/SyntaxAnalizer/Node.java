@@ -20,23 +20,23 @@ public class Node {
         private Builder() {
         }
 
-        public Builder setRule(String rule) {
+        Builder setRule(String rule) {
             Node.this.rule = rule;
             return this;
         }
 
-        public Builder addChildren(Node node) {
+        Builder addChildren(Node node) {
             if (node != null)
                 Node.this.children.add(node);
             return this;
         }
 
-        public Builder setData(String data) {
+        Builder setData(String data) {
             Node.this.data = data;
             return this;
         }
 
-        public Node build() {
+        Node build() {
             return Node.this;
         }
     }

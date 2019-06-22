@@ -105,12 +105,14 @@ public class ParseSig extends Model {
             prev = next;
             next = (char) reader.read();
             countColumns++;
-            if (next == '\uFFFF' || next == '.') {
+            if (next == '\n') countLines++;
+            if (next == '\uFFFF' /*|| next == '.'*/) {
                 throwError(next, "end of file");
                 break;
             }
             if (prev == '*' && next == ')') break;
         }
+        countLines++;
     }
 
     private String getMultiSymbolDivider(int intCh, Reader reader) throws IOException {
@@ -170,8 +172,6 @@ public class ParseSig extends Model {
         Reader reader = new InputStreamReader(in, "US-ASCII");
         setTable();
         int intCh;
-        setCountLines(1);
-        setCountColumns(1);
 
         Integer[] symbCat = CharacterTable.symbolCategory;
         String lexem = "";
@@ -192,9 +192,10 @@ public class ParseSig extends Model {
             }
 
             if (extraChar.isEmpty()) intCh = reader.read();
-            if (intCh == -1 || (char) intCh == '.') break;
+            if (intCh == -1 /*|| (char) intCh == '.'*/) break;
 
             countColumns++;
+
             if (ch == '\n') {
                 countLines++;
                 countColumns = 0;

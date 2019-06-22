@@ -12,7 +12,7 @@ public class Main {
         Grammar grammar = new Grammar();
         Generator generator = new Generator();
         generator.setFileOut(FILE_PATH);
-        generator.program(grammar.signalProgramm());
+        generator.program(grammar.signalProgram());
         generator.closeFile();
     }
 }

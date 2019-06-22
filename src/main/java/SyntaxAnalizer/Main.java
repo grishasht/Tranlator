@@ -1,13 +1,6 @@
 package SyntaxAnalizer;
 
-import LexAnalizer.CharacterTable;
-import LexAnalizer.ParseSig;
-
-import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -22,6 +15,6 @@ public class Main {
         // nodes.add(grammar.program());
         Grammar grammar = new Grammar();
         //System.out.println(grammar.program().toString());
-        Service.printTree(grammar.signalProgramm(), "");
+        Service.printTree(grammar.signalProgram(), "");
     }
 }

@@ -19,7 +19,8 @@ public class CharacterTable {
             if (i == 41 || i == 59 || i == 61)
                 symbolCategory[i] = 3;
             if (i == 40 || i == 42 || i == 43 ||
-                    i == 45 || i == 46 || i == 47) symbolCategory[i] = 3;
+                    i == 45 || i == 46 || i == 47
+                    || i == 91 || i == 93) symbolCategory[i] = 3;
             if (i == 58) symbolCategory[i] = 4;
             //if (i == 40 || i == 42) symbolCategory[i] = 5;
         }

@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        CharacterTable.createFileSymbolCategory();
+        CharacterTable.createFileSymbolCategory();
         CharacterTable.getSymbolCategory();
         ParseSig parseSig = ParseSig.getInstance();
         parseSig.getSigFile(new FileInputStream("src/main/resources/source.sig"));

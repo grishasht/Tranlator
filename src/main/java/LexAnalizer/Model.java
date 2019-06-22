@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class Model {
-    protected Integer countLines;
-    protected Integer countColumns;
+    protected Integer countLines = 1;
+    protected Integer countColumns = 1;
     protected Integer constantCode = 500;
     protected Integer identifierCode = 1000;
     protected String buffer;
