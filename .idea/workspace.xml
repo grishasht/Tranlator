@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c318001-3cb1-4503-99a0-b00da594776e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CodeGenerator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CodeGenerator/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/CharacterTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/CharacterTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/codeTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/codeTable.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/source.sig" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/source.sig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/symbolCategory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/symbolCategory.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LexAnalizer/CharacterTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LexAnalizer/CharacterTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LexAnalizer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LexAnalizer/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LexAnalizer/ParseSig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LexAnalizer/ParseSig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/source.sig" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/source.sig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/symbolCategory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/symbolCategory.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,95 +31,125 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.67364293">
+    <splitter split-orientation="horizontal" split-proportion="0.81696904">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/CharacterTable.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" selection-start-line="7" selection-end-line="7" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-391">
-                  <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Model.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-                  <folding>
-                    <element signature="e#832#833#0" expanded="true" />
-                    <element signature="e#876#877#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="514">
-                  <caret line="206" column="5" lean-forward="true" selection-start-line="206" selection-start-column="5" selection-end-line="206" selection-end-column="5" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.70273554">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/CharacterTable.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="323">
+                      <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+                      <folding>
+                        <element signature="imports" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Main.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="119">
+                      <caret line="7" selection-start-line="7" selection-end-line="7" />
+                      <folding>
+                        <element signature="imports" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="323">
+                      <caret line="171" column="44" selection-start-line="171" selection-start-column="44" selection-end-line="171" selection-end-column="44" />
+                      <folding>
+                        <element signature="imports" expanded="true" />
+                        <element signature="e#3610#3611#0" expanded="true" />
+                        <element signature="e#5244#5245#0" expanded="true" />
+                        <element signature="e#5295#5296#0" expanded="true" />
+                        <element signature="e#5564#5565#0" expanded="true" />
+                        <element signature="e#5591#5592#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="229">
+                      <caret line="57" selection-start-line="57" selection-end-line="57" />
+                      <folding>
+                        <element signature="imports" expanded="true" />
+                        <element signature="e#1140#1141#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/Model.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="102">
+                      <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+                      <folding>
+                        <element signature="e#832#833#0" expanded="true" />
+                        <element signature="e#876#877#0" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="157">
+                      <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+                      <folding>
+                        <element signature="imports" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/main/resources/source.sig">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="306">
+                      <caret line="18" selection-start-line="18" selection-end-line="18" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/src/main/resources/syntax_result.txt">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="391">
+                      <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="24" selection-end-column="33" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/source.sig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/syntax_result.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="16" selection-end-column="24" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/resources/PROG.ASM">
-              <provider selected="true" editor-type-id="text-editor" />
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+                </state>
+              </provider>
             </entry>
           </file>
         </leaf>
@@ -178,14 +192,14 @@
         <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/LexemeTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java" />
         <option value="$PROJECT_DIR$/src/main/resources/PROG.ASM" />
-        <option value="$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java" />
         <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/CharacterTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/codeTable.csv" />
         <option value="$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java" />
         <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/Model.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/syntax_result.txt" />
         <option value="$PROJECT_DIR$/src/main/java/LexAnalizer/ParseSig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/syntax_result.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java" />
         <option value="$PROJECT_DIR$/src/main/resources/source.sig" />
       </list>
     </option>
@@ -198,10 +212,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="279" />
-    <option name="y" value="158" />
-    <option name="width" value="1407" />
-    <option name="height" value="791" />
+    <option name="x" value="210" />
+    <option name="y" value="119" />
+    <option name="width" value="991" />
+    <option name="height" value="557" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -287,7 +301,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Lab3" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
@@ -384,18 +398,18 @@
       <workItem from="1560317333347" duration="5216000" />
       <workItem from="1561043553959" duration="324000" />
       <workItem from="1561190860605" duration="674000" />
-      <workItem from="1561205073301" duration="15183000" />
+      <workItem from="1561205073301" duration="26939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145255000" />
+    <option name="totallyTimeSpent" value="157011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18409818" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18409818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -404,7 +418,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.2699784" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19654427" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19654427" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.22678186" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -495,6 +509,18 @@
           <properties />
           <option name="timeStamp" value="96" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java</url>
+          <line>111</line>
+          <properties />
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java</url>
+          <line>173</line>
+          <properties />
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java</url>
           <line>61</line>
@@ -511,19 +537,16 @@
           </properties>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java</url>
-          <line>76</line>
-          <properties class="CodeGenerator.Generator" method="statementList">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>node.getChildren().get(0).getChildren().get(0).getRule()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>range()</expression-string>
         <language-id>JAVA</language-id>
@@ -567,11 +590,6 @@
       </expression>
       <expression>
         <expression-string>program(child.getChildren().get(0))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>grammar.program().toString()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -773,16 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/FileFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -810,16 +818,6 @@
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="206" column="5" lean-forward="true" selection-start-line="206" selection-start-column="5" selection-end-line="206" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LexAnalizer/CharacterTable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -838,20 +836,6 @@
             <element signature="e#832#833#0" expanded="true" />
             <element signature="e#876#877#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/syntax_result.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/source.sig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -875,18 +859,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Grammar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+        <state relative-caret-position="157">
+          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/SyntaxAnalizer/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CodeGenerator/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="171" column="44" selection-start-line="171" selection-start-column="44" selection-end-line="171" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3610#3611#0" expanded="true" />
+            <element signature="e#5244#5245#0" expanded="true" />
+            <element signature="e#5295#5296#0" expanded="true" />
+            <element signature="e#5564#5565#0" expanded="true" />
+            <element signature="e#5591#5592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/PROG.ASM">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/source.sig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/syntax_result.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
