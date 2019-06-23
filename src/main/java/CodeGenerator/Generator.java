@@ -17,7 +17,8 @@ public class Generator {
     private Map<Integer, String> lexemeTable;
     private LexemeList lexemeList;
     private List<String> registers = new ArrayList<>();
-    private Boolean ax = true;
+    private Boolean ax = true, expression = false;
+    private int statementCount = 1;
 
     {
         ParseSig parseSig = ParseSig.getInstance();
@@ -63,7 +64,7 @@ public class Generator {
                 } else if (child.getRule().equals("<statement-list>")) {
                     fileOut.write("CODE SEGMENT" + "\n\n");
                     statementList(child);
-                    fileOut.write("\nCODE ENDS" + "\n");
+                    fileOut.write("CODE ENDS" + "\n");
                 } else {
                     program(child);
                 }
@@ -92,14 +93,17 @@ public class Generator {
     }
 
     private void statement(Node node) throws IOException {
+        fileOut.write("\t; statement #" + statementCount++ + "\n");
+        ax = true;
         String expression = expression(node.getChildren().get(2));
         String variableIdentifier = variableIdentifier(node.getChildren().get(0));
-
         if (ax) {
-            fileOut.write("\tMOV " + variableIdentifier + ", CX" + "\n\n");
+            fileOut.write("\tRST\n");
+            fileOut.write("\tMOV " + variableIdentifier + ", AX" + "\n\n");
             ax = false;
         } else {
-            fileOut.write("\tMOV " + variableIdentifier + ", CX" + "\n\n");
+            fileOut.write("\tRST\n");
+            fileOut.write("\tMOV " + variableIdentifier + ", BX" + "\n\n");
             ax = true;
         }
     }
@@ -111,6 +115,7 @@ public class Generator {
     private String expression(Node node) throws IOException {
         String summand = summand(node.getChildren().get(0));
         String summandList = summandList(node.getChildren().get(1));
+        expression = false;
         return "";
     }
 
@@ -118,14 +123,13 @@ public class Generator {
         String multiplier = multiplier(node.getChildren().get(0));
 
         if (!ax) {
-            fileOut.write("\tMOV DX, AX\n");
+            fileOut.write("\tPUSH AX\n\n ");
             ax = true;
         }
         fileOut.write("\tMOV AX, " + multiplier + "\n");
         ax = false;
 
         String multipliersList = multipliersList(node.getChildren().get(1));
-
 
 
         return "";
@@ -138,28 +142,51 @@ public class Generator {
         else if ("<variable-identifier>".equals(node.getChildren().get(0).getRule())) {
             return node.getChildren().get(0).getChildren().get(0).getChildren().get(0).getRule();
         } else {
-            return expression(node.getChildren().get(1));
+            //expression = true;
+            String expression = expression(node.getChildren().get(1));
+            this.expression = true;
+            return expression;
         }
 
     }
 
     private String multipliersList(Node node) throws IOException {
-        if ("<empty>".equals(node.getChildren().get(0).getRule())){
+        if ("<empty>".equals(node.getChildren().get(0).getRule())) {
             return "empty";
         }
 
         String multiplicationInstruction = multiplicationInstruction(node.getChildren().get(0));
         String multiplier = multiplier(node.getChildren().get(1));
 
-        if ("/".equals(multiplicationInstruction)){
-            fileOut.write("\tMOV BX, " + multiplier + "\n");
-            fileOut.write("\tDIV BX" + "\n");
-        } else if ("*".equals(multiplicationInstruction)){
-            fileOut.write("\tMOV BX, " + multiplier + "\n");
-            fileOut.write("\tMUL BX" + "\n");
+        if ("/".equals(multiplicationInstruction)) {
+            if (!expression) {
+                fileOut.write("\tMOV BX, " + multiplier + "\n");
+                fileOut.write("\tDIV BX" + "\n");
+                fileOut.write("\tPUSH AX" + "\n\n");
+                ax = true;
+            }else {
+                fileOut.write("\tPOP BX\n");
+                fileOut.write("\tPOP AX\n");
+                fileOut.write("\tDIV BX" + "\n");
+                fileOut.write("\tPUSH AX" + "\n\n");
+            }
+
+        } else if ("*".equals(multiplicationInstruction)) {
+            if (!expression) {
+                fileOut.write("\tMOV BX, " + multiplier + "\n");
+                fileOut.write("\tMUL BX" + "\n");
+                fileOut.write("\tPUSH AX" + "\n\n");
+                ax = true;
+            } else{
+                fileOut.write("\tPOP BX\n");
+                fileOut.write("\tPOP AX\n");
+                fileOut.write("\tMUL BX" + "\n");
+                fileOut.write("\tPUSH AX" + "\n\n");
+            }
         }
         multipliersList(node.getChildren().get(2));
 
+        expression = false;
         return multiplier;
     }
 
@@ -168,16 +195,22 @@ public class Generator {
     }
 
     private String summandList(Node node) throws IOException {
-
-        fileOut.write("\tMOV CX, AX" + "\n\n");
         ax = true;
         String summand = summand(node.getChildren().get(1));
         String addInstruction = addInstruction(node.getChildren().get(0));
 
-        if ("+".equals(addInstruction)){
-            fileOut.write("\tADD CX, AX" + "\n");
-        } else if ("-".equals(addInstruction)){
-            fileOut.write("\tSUB CX, AX" + "\n");
+        if ("+".equals(addInstruction)) {
+            fileOut.write("\tPOP BX\n");
+            fileOut.write("\tPOP AX\n");
+            fileOut.write("\tADD AX, BX" + "\n");
+            fileOut.write("\tPUSH AX\n\n");
+            expression = false;
+        } else if ("-".equals(addInstruction)) {
+            fileOut.write("\tPOP BX\n");
+            fileOut.write("\tPOP AX\n");
+            fileOut.write("\tSUB AX, BX" + "\n");
+            fileOut.write("\tPUSH AX\n\n");
+            expression = false;
         }
 
         return "";
