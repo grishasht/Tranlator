@@ -16,7 +16,6 @@ public class Generator {
     private List<String> procedures = new LinkedList<>();
     private Map<Integer, String> lexemeTable;
     private LexemeList lexemeList;
-    private List<String> registers = new ArrayList<>();
     private Boolean ax = true, expression = false;
     private int statementCount = 1;
 
@@ -32,7 +31,7 @@ public class Generator {
         }
     }
 
-    public void setFileOut(String path) {
+    void setFileOut(String path) {
         try {
             this.fileOut = new FileWriter(path);
         } catch (IOException e) {
@@ -40,7 +39,7 @@ public class Generator {
         }
     }
 
-    public void closeFile() {
+    void closeFile() {
         try {
             fileOut.close();
         } catch (IOException e) {
@@ -75,7 +74,7 @@ public class Generator {
         return "";
     }
 
-    private String statementList(Node child) throws IOException {
+    private void statementList(Node child) throws IOException {
 
         for (Node node : child.getChildren()) {
             if ("<empty>".equals(node.getRule())) {
@@ -89,13 +88,12 @@ public class Generator {
             }
         }
 
-        return null;
     }
 
     private void statement(Node node) throws IOException {
         fileOut.write("\t; statement #" + statementCount++ + "\n");
         ax = true;
-        String expression = expression(node.getChildren().get(2));
+        expression(node.getChildren().get(2));
         String variableIdentifier = variableIdentifier(node.getChildren().get(0));
         if (ax) {
             fileOut.write("\tRST\n");
@@ -113,13 +111,13 @@ public class Generator {
     }
 
     private String expression(Node node) throws IOException {
-        String summand = summand(node.getChildren().get(0));
-        String summandList = summandList(node.getChildren().get(1));
+        summand(node.getChildren().get(0));
+        summandList(node.getChildren().get(1));
         expression = false;
         return "";
     }
 
-    private String summand(Node node) throws IOException {
+    private void summand(Node node) throws IOException {
         String multiplier = multiplier(node.getChildren().get(0));
 
         if (!ax) {
@@ -129,10 +127,9 @@ public class Generator {
         fileOut.write("\tMOV AX, " + multiplier + "\n");
         ax = false;
 
-        String multipliersList = multipliersList(node.getChildren().get(1));
+        multipliersList(node.getChildren().get(1));
 
 
-        return "";
     }
 
     private String multiplier(Node node) throws IOException {
@@ -140,9 +137,10 @@ public class Generator {
         if ("<unsigned-integer>".equals(node.getChildren().get(0).getRule()))
             return node.getChildren().get(0).getChildren().get(0).getRule();
         else if ("<variable-identifier>".equals(node.getChildren().get(0).getRule())) {
-            return node.getChildren().get(0).getChildren().get(0).getChildren().get(0).getRule();
+            String var = node.getChildren().get(0).getChildren().get(0).getChildren().get(0).getRule();
+            checkIfVarDeclared(var);
+            return var;
         } else {
-            //expression = true;
             String expression = expression(node.getChildren().get(1));
             this.expression = true;
             return expression;
@@ -150,9 +148,9 @@ public class Generator {
 
     }
 
-    private String multipliersList(Node node) throws IOException {
+    private void multipliersList(Node node) throws IOException {
         if ("<empty>".equals(node.getChildren().get(0).getRule())) {
-            return "empty";
+            return;
         }
 
         String multiplicationInstruction = multiplicationInstruction(node.getChildren().get(0));
@@ -187,16 +185,15 @@ public class Generator {
         multipliersList(node.getChildren().get(2));
 
         expression = false;
-        return multiplier;
     }
 
     private String multiplicationInstruction(Node node) {
         return node.getChildren().get(0).getRule();
     }
 
-    private String summandList(Node node) throws IOException {
+    private void summandList(Node node) throws IOException {
         ax = true;
-        String summand = summand(node.getChildren().get(1));
+        summand(node.getChildren().get(1));
         String addInstruction = addInstruction(node.getChildren().get(0));
 
         if ("+".equals(addInstruction)) {
@@ -213,7 +210,6 @@ public class Generator {
             expression = false;
         }
 
-        return "";
     }
 
     private String addInstruction(Node node) {
@@ -233,11 +229,13 @@ public class Generator {
         Node identifier = child.getChildren().get(0)
                 .getChildren().get(0)
                 .getChildren().get(0);
-        Integer type = Integer.valueOf(child.getChildren().get(2)
+        int type = Integer.parseInt(child.getChildren().get(2)
                 .getData());
 
         if (Integer.valueOf(identifier.getData()) >= 1000) {
             try {
+                checkDeclarVarDuplication(identifier.getRule());
+                //identSet.add(identifier.getRule());
                 fileOut.write("\t" + identifier.getRule());
             } catch (IOException e) {
                 e.printStackTrace();
@@ -277,11 +275,18 @@ public class Generator {
         procedures.add(procName);
     }
 
-    private void checkDeclarVarDuplication(String var, int identCode) {
+    private void checkIfVarDeclared(String var){
+        if (!identSet.contains(var)){
+            System.out.println("Semantic error: the " + var + " not defined!\n");
+            System.exit(0);
+        }
+    }
+
+    private void checkDeclarVarDuplication(String var) {
         if (identSet.contains(var)) {
-            System.out.println("Semantic error: Identifier \""
-                    + lexemeTable.get(identCode) + "\""
-                    + " is already defined");
+            System.out.println("Semantic error: Identifier "
+                    + var + " is already defined");
+            System.exit(0);
         } else {
             identSet.add(var);
         }
