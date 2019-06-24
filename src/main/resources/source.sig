@@ -1,9 +1,6 @@
 PROGRAM MAIN;
 
 VAR
-    (*
-    TEST: [2..4[1..4 [3..5]]];
-    *)
     TEST1:      INTEGER;
     VAR1:       INTEGER;
     VAR2:       INTEGER;

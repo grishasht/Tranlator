@@ -183,6 +183,13 @@ public class Grammar {
 
     private Node type() {
         Lexeme lexeme = lexemeList.pop();
+        if (";".equals(lexeme.lexeme)){
+            lexemeList.addFirst(lexeme);
+            return Node.newBuilder()
+                    .setRule("<type>")
+                    .addChildren(empty())
+                    .build();
+        }
 
         if (lexeme != null) {
             if ("INTEGER".equals(lexeme.lexeme.toUpperCase())) {
@@ -206,7 +213,54 @@ public class Grammar {
         } else return null;
     }
 
-    private Node range() {
+    private Node range(){
+        Lexeme lexeme = lexemeList.pop();
+        Node unsignedInteger1 = unsignedInteger();
+        Lexeme dot1 = lexemeList.pop();
+        Lexeme dot2 = lexemeList.pop();
+        Node unsignedInteger2 = unsignedInteger();
+        Lexeme lexeme1 = lexemeList.pop();
+
+        Node range = Node.newBuilder()
+                .setRule("<range>")
+                .build();
+
+        if (lexeme != null) {
+            if (unsignedInteger1 == null) {
+                Service.throwError("Constant expected." + Service.lineColumnError(lexemeList));
+                System.exit(0);
+            } else if (!".".equals(dot1.lexeme) || !".".equals(dot2.lexeme)) {
+                Service.throwError("'..' expected." + Service.lineColumnError(lexemeList));
+                System.exit(0);
+            } else if (unsignedInteger2 == null) {
+                Service.throwError("Constant expected." + Service.lineColumnError(lexemeList));
+                System.exit(0);
+            } else if (!"]".equals(lexeme1.lexeme)){
+                Service.throwError("']' expected." + Service.lineColumnError(lexemeList));
+                System.exit(0);
+            } else {
+                range.addChildren(terminal("["));
+                range.addChildren(unsignedInteger1);
+                range.addChildren(terminal(".."));
+                range.addChildren(unsignedInteger2);
+                range.addChildren(terminal("]"));
+                Lexeme lexeme2 = lexemeList.pop();
+                if ("[".equals(lexeme2.lexeme) || "INTEGER".equals(lexeme2.lexeme)
+                    || ";".equals(lexeme2.lexeme)){
+                    lexemeList.addFirst(lexeme2);
+                    range.addChildren(type());
+                    return range;
+                } else {
+                    range.addChildren(empty());
+                    return range;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private Node range1() {
         Lexeme lexeme = lexemeList.pop();
         Node unsignedInteger1 = unsignedInteger();
         Lexeme dot1 = lexemeList.pop();
@@ -438,6 +492,7 @@ public class Grammar {
             } else {
                 lexemeList.addFirst(lexeme);
 //                Service.throwError("'*' or '/' expected");
+//                System.exit(0);
             }
         }
         return null;
